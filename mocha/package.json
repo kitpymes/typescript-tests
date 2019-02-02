@@ -1,0 +1,28 @@
+{
+  "name": "typescript-mocha-test",
+  "version": "1.0.0",
+  "description": "Typescript Test With Mocha and Coverage",
+  "keywords": ["typescript", "mocha", "coverage", "test", "http-server"],
+  "author": "Kitpymes",
+  "license": "ISC",
+
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.test.ts",
+    "test:c": "nyc -r lcov -e .ts -x \"tests/*.test.ts\" mocha -r ts-node/register tests/**/*.test.ts && nyc report",
+    "start": "http-server -c-1 -o -p 9875 ./coverage/lcov-report"
+  },
+
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

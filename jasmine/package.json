@@ -1,0 +1,27 @@
+{
+  "name": "typescript-jasmine-test",
+  "version": "1.0.0",
+  "description": "Typescript Test With Jasmine and Coverage",
+  "keywords": ["typescript", "jasmine", "coverage", "test", "http-server"],
+  "author": "Kitpymes",
+  "license": "ISC",
+
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-ts --config=jasmine.json",
+    "test:c": "nyc -r lcov -e .ts -x \"tests/*.test.ts\" jasmine-ts --config=jasmine.json && nyc report",
+    "start": "http-server -c-1 -o -p 9875 ./coverage/lcov-report"
+  },
+
+  "devDependencies": {
+    "@types/jasmine": "^3.3.8",
+    "jasmine": "^3.3.1",
+    "jasmine-ts": "^0.3.0",
+    "nyc": "^13.1.0",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.1"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "typescript-jest-test",
+  "version": "1.0.0",
+  "description": "Typescript Test With Jest and Coverage",
+  "keywords": ["typescript", "jest", "coverage", "test", "http-server"],
+  "author": "Kitpymes",
+  "license": "ISC",
+
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:c": "jest --coverage",
+    "start": "http-server -c-1 -o -p 9875 ./coverage/lcov-report"
+  },
+
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "jest": "^24.0.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
